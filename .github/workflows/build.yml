@@ -1,0 +1,51 @@
+name: build
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v2
+
+      - name: Clone build
+        uses: actions/checkout@v2
+        with:
+          ref: master
+          path: build
+
+      - name: install mdbook
+        run : |
+          cargo install mdbook
+
+      - name: build
+        run: |
+          cd ./build 
+          mdbook build
+
+      - name: Clone gh-pages
+        uses: actions/checkout@v2
+        with:
+          ref: gh-pages
+          path: pages  
+
+      - name: push
+        run: |
+          rm -rf ./pages/*
+          cp -r ./build/book* ./pages
+          cd ./pages
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git checkout gh-pages
+          git add .
+          git commit -m "new post"
+          git push
+
+         

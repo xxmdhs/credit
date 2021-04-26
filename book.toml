@@ -6,7 +6,7 @@ src = "src"
 title = "积分统计 2021.4"
 
 [output.html]
-site-url = "/2021.4/"
+#site-url = "/"
 
 [output.html.search]
 enable = false
