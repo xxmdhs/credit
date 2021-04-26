@@ -30,7 +30,8 @@ jobs:
         run: |
           cd ./build 
           cp ../mdbook ./
-          mdbook build
+          chmod +x mdbook
+          ./mdbook build
 
       - name: Clone gh-pages
         uses: actions/checkout@v2
