@@ -14,7 +14,7 @@
 
 具体内容为了规避敏感词，所以放到 github 上了，并用 mdbook 弄了一个简单的网页来查看。
 
-[点击查看](https://credit.xmdhs.top/credit/2021.4)
+[点击查看](https://credit.xmdhs.top/credit/)
 
 另外最近把之前爬小黑屋的程序重写了一遍，现在每天都会用 github actions 更新数据，感兴趣可以看看，[https://xxmdhs.github.io/showdarkroom/](https://xxmdhs.github.io/showdarkroom/)  
 具体有啥用呢？比如说，有一个人被封了，你小黑屋翻了好几页也找不到，就可以试试这个了。
