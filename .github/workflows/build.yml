@@ -42,6 +42,7 @@ jobs:
       - name: push
         run: |
           rm -rf ./pages/*
+          echo "credit.xmdhs.top" > ./pages/CNAME
           cp -r ./build/book/* ./pages
           cd ./pages
           git config user.name github-actions
