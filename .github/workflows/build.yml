@@ -23,11 +23,13 @@ jobs:
 
       - name: install mdbook
         run : |
-          cargo install mdbook
-
+          wget https://github.com/rust-lang/mdBook/releases/download/v0.4.7/mdbook-v0.4.7-x86_64-unknown-linux-gnu.tar.gz -O mdbook.tar.gz
+          tar -zxvf mdbook.tar.gz
+          
       - name: build
         run: |
           cd ./build 
+          cp ../mdbook ./
           mdbook build
 
       - name: Clone gh-pages
