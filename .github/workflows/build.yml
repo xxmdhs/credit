@@ -42,7 +42,7 @@ jobs:
       - name: push
         run: |
           rm -rf ./pages/*
-          cp -r ./build/book* ./pages
+          cp -r ./build/book/* ./pages
           cd ./pages
           git config user.name github-actions
           git config user.email github-actions@github.com
