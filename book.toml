@@ -3,7 +3,7 @@ authors = ["xmdhs"]
 language = "en"
 multilingual = false
 src = "src"
-title = "积分统计 2021.4"
+title = "积分统计"
 
 [output.html]
 #site-url = "/"
