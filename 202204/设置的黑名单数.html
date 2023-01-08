@@ -4,8 +4,10 @@
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>设置的黑名单数 - 积分统计</title>
+
+
         <!-- Custom HTML head -->
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
@@ -16,25 +18,28 @@
         <link rel="stylesheet" href="../css/general.css">
         <link rel="stylesheet" href="../css/chrome.css">
         <link rel="stylesheet" href="../css/print.css" media="print">
+
         <!-- Fonts -->
         <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
         <link rel="stylesheet" href="../fonts/fonts.css">
+
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="../highlight.css">
         <link rel="stylesheet" href="../tomorrow-night.css">
         <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
+
     </head>
     <body>
         <!-- Provide site root to javascript -->
-        <script type="text/javascript">
+        <script>
             var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
+        <script>
             try {
                 var theme = localStorage.getItem('mdbook-theme');
                 var sidebar = localStorage.getItem('mdbook-sidebar');
@@ -50,7 +55,7 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
+        <script>
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
@@ -62,7 +67,7 @@
         </script>
 
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
+        <script>
             var html = document.querySelector('html');
             var sidebar = 'hidden';
             if (document.body.clientWidth >= 1080) {
@@ -83,7 +88,7 @@
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
+                                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky bordered">
                     <div class="left-buttons">
                         <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -93,7 +98,7 @@
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
@@ -107,11 +112,13 @@
                         <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
+
                     </div>
                 </div>
 
+
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
+                <script>
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
@@ -121,7 +128,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <table><thead><tr><th>排名</th><th>uid</th><th>用户名</th><th>积分</th><th>人气</th><th>金粒</th><th>金锭</th><th>绿宝石</th><th>下界之星</th><th>贡献</th><th>爱心</th><th>钻石</th><th>勋章数</th><th>精华数</th><th>设置黑名单数</th><th>在线时间</th><th>回帖数</th><th>主题数</th><th>好友数</th><th>空间查看次数</th><th>用户组</th><th>扩展用户组</th><th>上次访问时间</th></tr></thead><tbody>
+                        <div class="table-wrapper"><table><thead><tr><th>排名</th><th>uid</th><th>用户名</th><th>积分</th><th>人气</th><th>金粒</th><th>金锭</th><th>绿宝石</th><th>下界之星</th><th>贡献</th><th>爱心</th><th>钻石</th><th>勋章数</th><th>精华数</th><th>设置黑名单数</th><th>在线时间</th><th>回帖数</th><th>主题数</th><th>好友数</th><th>空间查看次数</th><th>用户组</th><th>扩展用户组</th><th>上次访问时间</th></tr></thead><tbody>
 <tr><td>1</td><td>69508</td><td>shure</td><td>7072</td><td>731</td><td>5824</td><td>104</td><td>5</td><td>3</td><td>16</td><td>1</td><td>1528</td><td>9</td><td>0</td><td>41</td><td>2928</td><td>3759</td><td>203</td><td>64</td><td>93</td><td>Lv.9 牧场主</td><td></td><td>2022-03-25 20:32:53</td></tr>
 <tr><td>2</td><td>1770442</td><td>xmdhs</td><td>76580</td><td>4929</td><td>464100</td><td>-16</td><td>87</td><td>31</td><td>48</td><td>9909</td><td>3447</td><td>27</td><td>0</td><td>30</td><td>14927</td><td>43822</td><td>88</td><td>37</td><td>1276</td><td><font color="#0099FF">Lv.Inf 艺术家</font></td><td></td><td>2022-03-30 10:49:10</td></tr>
 <tr><td>3</td><td>2133017</td><td>灿仙女</td><td>5</td><td>1</td><td>10</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>30</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>等待验证会员</td><td></td><td>2017-03-09 11:57:23</td></tr>
@@ -1123,7 +1130,7 @@
 <tr><td>999</td><td>865</td><td>hkhkmark</td><td>474</td><td>33</td><td>1282</td><td>10</td><td>0</td><td>0</td><td>0</td><td>0</td><td>178</td><td>0</td><td>0</td><td>0</td><td>129</td><td>50</td><td>1</td><td>0</td><td>0</td><td>Lv.5 农夫</td><td></td><td>2017-02-18 00:19:49</td></tr>
 <tr><td>1000</td><td>873</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td></td><td>0</td><td>1970-01-01 08:00:00</td></tr>
 </tbody></table>
-
+</div>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
@@ -1131,9 +1138,11 @@
                             <a rel="prev" href="../202204/精华数.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
+
                             <a rel="next" href="../202204/组人数统计（不精准）.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
+
                         <div style="clear: both"></div>
                     </nav>
                 </div>
@@ -1143,6 +1152,7 @@
                     <a rel="prev" href="../202204/精华数.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
+
                     <a rel="next" href="../202204/组人数统计（不精准）.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
@@ -1150,13 +1160,21 @@
 
         </div>
 
-        <script type="text/javascript">
+
+
+
+        <script>
             window.playground_copyable = true;
         </script>
-        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
 
         <!-- Custom JS scripts -->
+
+
     </body>
 </html>
