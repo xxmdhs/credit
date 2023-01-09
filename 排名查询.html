@@ -165,11 +165,11 @@
 
             async function find() {
                 resultList.value = []
-                const f = await fetch(`https://files.xmdhs.com/creditapi/userinfo/${uid.value}`)
+                const f = await fetch(`https://creditapi.xmdhs.com/userinfo/${uid.value}`)
                 const ud = await f.json()
 
                 for (const key in fieldMap) {
-                    const f = await fetch(`https://files.xmdhs.com/creditapi/rank/${uid.value}/${key}`)
+                    const f = await fetch(`https://creditapi.xmdhs.com/rank/${uid.value}/${key}`)
                     const d = await f.json()
                     resultList.value.push({
                         rank:   ud["data"][key] + " (第 " + d.data + " 名)",
