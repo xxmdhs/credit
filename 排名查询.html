@@ -138,12 +138,15 @@
     <div style="display: flex;column-gap: 5px;">
         <input v-model.trim="uid" type="tel" /><button @click="find">查询</button>
     </div>
+    <img v-show="uid" :src="'https://www.mcbbs.net/uc_server/avatar.php?uid=' + uid + '&size=middle'" style="max-width: 120px;"/>
+    <p v-show="name">{{ name }} ({{ uid }})</p>
     <p v-for="{rank, field} in resultList" :key="field">{{ field }}: {{ rank }}</p>
 </div>
 <script>
     Vue.createApp({
         setup() {
             const uid = Vue.ref("");
+            const name = Vue.ref("");
             const resultList = Vue.ref([]);
 
             const fieldMap = {
@@ -167,7 +170,7 @@
                 resultList.value = []
                 const f = await fetch(`https://creditapi.xmdhs.com/userinfo/${uid.value}`)
                 const ud = await f.json()
-
+                name.value = ud["data"]["name"]
                 for (const key in fieldMap) {
                     const f = await fetch(`https://creditapi.xmdhs.com/rank/${uid.value}/${key}`)
                     const d = await f.json()
@@ -182,7 +185,8 @@
             return {
                 uid,
                 find,
-                resultList
+                resultList,
+                name
             }
         },
     }).mount('#app')
