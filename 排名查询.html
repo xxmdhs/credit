@@ -130,7 +130,7 @@
                     <main>
                         <h1 id="排名查询"><a class="header" href="#排名查询">排名查询</a></h1>
 <p>因为 2023.1 时大改了爬虫，将储存改为了类 MySQL，所以现在可以查询最近一次积分统计，任意用户的排名。</p>
-<p>数据库使用免费服务，不保证可用性，也不确保能使用多久。</p>
+<p>后端和数据库使用免费服务，不保证可用性，也不确保能使用多久。</p>
 <p>对于此处的排名查询 api，可以随意的自由的使用，但需合理的调用。毕竟使用的是免费服务，滥用可能会被停止服务，api 自然也就失效了。</p>
 <p>数据截至 2023/1/9 左右。</p>
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -174,11 +174,11 @@
 
             async function find() {
                 resultList.value = []
-                const f = await fetch(`https://creditget-test-zyhnotplhu.cn-shenzhen.fcapp.run/userinfo/${uid.value}`)
+                const f = await fetch(`https://creditapi.xmdhs.com/userinfo/${uid.value}`)
                 const ud = await f.json()
                 name.value = ud["data"]["name"]
                 for (const key in fieldMap) {
-                    const f = await fetch(`https://creditget-test-zyhnotplhu.cn-shenzhen.fcapp.run/rank/${uid.value}/${key}`)
+                    const f = await fetch(`https://creditapi.xmdhs.com/rank/${uid.value}/${key}`)
                     const d = await f.json()
                     resultList.value.push({
                         rank: ud["data"][key] + " (第 " + d.data + " 名)",
