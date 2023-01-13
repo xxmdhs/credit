@@ -136,7 +136,7 @@
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 <div id="app">
     <div style="display: flex;column-gap: 5px;">
-        <input v-model.trim="uid" type="tel" /><button @click="find">查询</button>
+        <input v-model.trim="uid" type="tel" placeholder="uid" /><button @click="find">查询</button>
     </div>
     <img v-show="uid" :src="'https://www.mcbbs.net/uc_server/avatar.php?uid=' + uid + '&size=middle'"
         style="max-width: 120px;margin-top: 5px;" />
